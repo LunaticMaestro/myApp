@@ -11,7 +11,7 @@ from setuptools import find_packages, setup
 # This call to setup() does all the work
 setup(
     name="myapp",
-    version="1.0.0",
+    version="1.0.1",
     description="Just greets you",
     # long_description=README,
     # long_description_content_type="text/markdown",
