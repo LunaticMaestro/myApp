@@ -1,0 +1,29 @@
+name: Build Python Package
+
+on:
+  push:
+    branches:
+      - release
+jobs:
+  builder:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: start build
+      run: |
+        cd src/
+        python -m pip install --upgrade pip
+        pip setup.py build sdist bdist
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
+      with:
+        # Artifact name
+        name: package
+        # A file, directory or wildcard pattern that describes what to upload
+        path: .
