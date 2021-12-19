@@ -16,7 +16,7 @@ jobs:
       with:
         python-version: '3.x'
     - name: custom-action
-      uses: lunaticmaestro/myActions@master
+      uses: lunaticmaestro/myActions@main
     - name: start build
       run: |
         cd src/
